@@ -1,0 +1,7 @@
+library(vegan)
+options(scipen=999)
+VKI<-read.csv(file="filename.csv", header = TRUE, row.names = 1)
+VKI<-t(VKI)
+raremax <- min(rowSums(VKI))
+col <- c("darkred", "blue", "green")
+rarecurve(VKI, step = 100, sample = raremax,  cex = 0.8, col = col, xlab = "Observed seqences", ylab ="Observed OTUs" )
