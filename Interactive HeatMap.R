@@ -1,0 +1,17 @@
+library(d3heatmap)
+library(gplots)
+otu <- read.table(file= "func_table_cutoff.txt", header = TRUE,row.names = 1,sep = "\t")
+otu.n <- scale(t(otu))
+otu.tn<- t(otu.n)
+d1 <- dist(otu.n,method = "euclidean", diag = FALSE, upper = FALSE)
+d2 <- dist(otu.tn,method = "euclidean", diag = FALSE, upper = TRUE)
+c1 <- hclust(d1, method = "ward.D2", members = NULL)
+c2 <- hclust(d2, method = "ward.D2", members = NULL)
+par(mfrow=c(2,1),cex=0.5)
+plot(c1); plot(c2)
+my_palette <- colorRampPalette(c("blue","green","red"))(n = 46)
+par(cex.main=0.5)
+heatmap.2(otu.tn, Colv=as.dendrogram(c1), Rowv=as.dendrogram(c2), density.info="histogram",  trace = "none",  col = my_palette,  cexRow=1,cexCol=1, srtCol=0, margin=c(5,12))
+# use margin () to avoid breaking or hiding of Data
+q#interactive heatmap
+d3heatmap(otu.tn,Rowv=as.dendrogram(c2),Colv=as.dendrogram(c1),col=my_palette,srtCol=0 )
