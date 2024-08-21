@@ -5,7 +5,7 @@ save(installedpackages, file="~/installed_packages.rda")
 
 
 #load stored package
-#download 'installed_packages.rda' for fresh installations.
+#download 'installed_packages.rda' for fresh/first installations.
 load("installed_packages.rda")
 
 for (count in 1:length(installedpackages)) {
