@@ -1,4 +1,4 @@
-#store packages
+#store packages,periodically back up packages
 tmp = installed.packages()
 installedpackages = as.vector(tmp[is.na(tmp[,"Priority"]), 1])
 save(installedpackages, file="~/installed_packages.rda")
