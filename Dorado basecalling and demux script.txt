@@ -1,0 +1,5 @@
+Dorado basecalling and demux scripts.
+
+dorado-0.7.3-linux-x64/bin/dorado duplex sup /users/PJS0356/shantom/Data/COMPASS/LIB3/pod5_pass/  > duplexLIB3.bam
+
+dorado-0.7.3-linux-x64/bin/dorado demux  --output-dir /users/PJS0356/shantom/Data/COMPASS/LIB3/pod5_pass/check --kit-name SQK-NBD111-24 --emit-fastq  duplexLIB3.bam
