@@ -2,6 +2,7 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("dada2", version = "3.20")
 BiocManager::install("phyloseq")
+BiocManager::install("decontam")
 
 install.packages("devtools")
 devtools::install_github("ChiLiubio/microeco")
