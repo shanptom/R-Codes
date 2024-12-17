@@ -1,6 +1,6 @@
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
-BiocManager::install("dada2", version = "3.19")
+BiocManager::install("dada2", version = "3.20")
 BiocManager::install("phyloseq")
 
 install.packages("devtools")
